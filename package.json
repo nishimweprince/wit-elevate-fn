@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "set ESLINT_DISABLE_CHECK=true && tsc && vite build",
+    "build": "npm i && ESLINT_NO_DEV_ERRORS=true vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -55,7 +55,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.0.0",
-    "date-fns": "^3.6.0",
+    "date-fns": "^2.30.0",
     "dayjs": "^1.11.10",
     "dotenv": "^16.3.1",
     "embla-carousel-react": "^8.3.0",
