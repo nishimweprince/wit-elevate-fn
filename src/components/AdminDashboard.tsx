@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Row, Col, Typography, Table, Tag, Progress } from 'antd';
 import axios from 'axios';
+import { SERVER_URL } from '../util/constant';
 
 const { Title } = Typography;
 
@@ -38,8 +39,8 @@ const AdminDashboard: React.FC = () => {
     const fetchStatistics = async () => {
       try {
         const [overallResponse, usersResponse] = await Promise.all([
-          axios.get('/api/assessments/statistics/overall'),
-          axios.get('/api/assessments/statistics/users')
+          axios.get(`${SERVER_URL}/assessments/statistics/overall`),
+          axios.get(`${SERVER_URL}/assessments/statistics/users`)
         ]);
         setOverallStats(overallResponse.data.data);
         setUserStats(usersResponse.data.data);

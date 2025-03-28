@@ -8,11 +8,12 @@
 // export default defineConfig({
 //   plugins: [tsconfigPaths()],
 // });
+
 export default {
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'https://wit-elevate-c8cva5a7b7bfa7f3.canadacentral-01.azurewebsites.net',
         changeOrigin: true,
       }
     }

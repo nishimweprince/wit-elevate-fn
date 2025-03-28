@@ -174,7 +174,7 @@ export async function signUp(formdata: formData) {
 
 
 
-const API_URL = import.meta.env.VITE_UR || 'http://localhost:3000/api';
+const API_URL = import.meta.env.VITE_APP_URL_SERVER_URL || SERVER_URL;
 
 export const fetchAssessments = async (category?: string, skillLevel?: string): Promise<AssessmentListItem[]> => {
   try {
