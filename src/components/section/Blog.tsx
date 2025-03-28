@@ -10,7 +10,7 @@ const Blog = () => {
 
   useEffect(() => {
     allBlogs(2).then((data) => {
-      setBlogs(data);
+      setBlogs(data?.data);
     });
   }, []);
 
@@ -20,9 +20,9 @@ const Blog = () => {
         Read Blogs from our women <br></br> contributors
       </h1>
       <div className="grid grid-cols-2 px-16 gap-12 bg-white  pt-28 ">
-        {blogs?.map(({ title, _id, picture, description }: blogProps) => {
+        {(blogs ?? [])?.map(({ title, _id, picture, description }: blogProps) => {
           return (
-            <div className="flex gap-8">
+            <div className="flex gap-8" key={_id}>
               <img
                 src={picture}
                 alt="blg"

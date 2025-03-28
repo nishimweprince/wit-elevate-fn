@@ -1,1 +1,1 @@
-export const SERVER_URL = import.meta.env.VITE_URL_SERVER_URL || "https://wit-elevate-c8cva5a7b7bfa7f3.canadacentral-01.azurewebsites.net/api"
+export const SERVER_URL = import.meta.env.VITE_APP_URL_SERVER_URL || "https://wit-elevate-c8cva5a7b7bfa7f3.canadacentral-01.azurewebsites.net/api"

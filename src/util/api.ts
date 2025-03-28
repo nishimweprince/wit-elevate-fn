@@ -15,7 +15,7 @@ export async function allEvents(limit?: number) {
 }
 
 export async function event(id: any) {
-  const url = `${import.meta.env.VITE_URL}/event/${id}`;
+  const url = `${SERVER_URL}/event/${id}`;
   try {
     const data = await axios.get(url);
     return data.data;
@@ -24,7 +24,7 @@ export async function event(id: any) {
   }
 }
 export async function createEvent(eventData: any) {
-  const url = `${import.meta.env.VITE_URL}/postEvent`;
+  const url = `${SERVER_URL}/postEvent`;
   try {
     const data = await axios.post(url, eventData, {
       headers: {
@@ -51,7 +51,7 @@ export async function editEvent(eventData: any, id: any) {
 }
 
 export async function createBlog(blogData: any) {
-  const url = `${import.meta.env.VITE_URL}/postBlog`;
+  const url = `${SERVER_URL}/postBlog`;
   try {
     const data = await axios.post(url, blogData, {
       headers: {
@@ -65,7 +65,7 @@ export async function createBlog(blogData: any) {
 }
 
 export async function deleteEvent(id: any) {
-  const url = `${import.meta.env.VITE_URL}/deleteEvent/${id}`;
+  const url = `${SERVER_URL}/deleteEvent/${id}`;
   try {
     const data = await axios.delete(url, {
       headers: {
@@ -79,7 +79,7 @@ export async function deleteEvent(id: any) {
 }
 
 export async function allBlogs(limit?: number, userId?: string) {
-  const url = `${import.meta.env.VITE_URL}/allblogs?limit=${limit}&${
+  const url = `${SERVER_URL}/allblogs?limit=${limit}&${
     userId && "user=" + userId
   }`;
   try {
@@ -91,7 +91,7 @@ export async function allBlogs(limit?: number, userId?: string) {
 }
 
 export async function blog(id: any) {
-  const url = `${import.meta.env.VITE_URL}/oneBlog/${id}`;
+  const url = `${SERVER_URL}/oneBlog/${id}`;
   try {
     const data = await axios.get(url);
     return data.data;
@@ -101,7 +101,7 @@ export async function blog(id: any) {
 }
 
 export async function editBlog(blogData: any, id: any) {
-  const url = `${import.meta.env.VITE_URL}/updateBlog/${id}`;
+  const url = `${SERVER_URL}/updateBlog/${id}`;
   try {
     const data = await axios.patch(url, blogData, {
       headers: {
@@ -115,7 +115,7 @@ export async function editBlog(blogData: any, id: any) {
 }
 
 export async function deleteBlog(id: any) {
-  const url = `${import.meta.env.VITE_URL}/deleteBlog/${id}`;
+  const url = `${SERVER_URL}/deleteBlog/${id}`;
   try {
     const data = await axios.delete(url, {
       headers: {
@@ -129,7 +129,7 @@ export async function deleteBlog(id: any) {
 }
 
 export async function postComment(blogId: any, formData: any) {
-  const url = `${import.meta.env.VITE_URL}/postComment/${blogId}`;
+  const url = `${SERVER_URL}/postComment/${blogId}`;
   try {
     const data = await axios.post(url, formData, {
       headers: {
@@ -142,7 +142,7 @@ export async function postComment(blogId: any, formData: any) {
   }
 }
 export async function comment(blogId: any) {
-  const url = `${import.meta.env.VITE_URL}/comments/${blogId}`;
+  const url = `${SERVER_URL}/comments/${blogId}`;
   try {
     const data = await axios.get(url);
     return data.data;
@@ -152,7 +152,7 @@ export async function comment(blogId: any) {
 }
 
 export async function logIn(formdata: formData) {
-  const url = `${import.meta.env.VITE_URL}/signIn`;
+  const url = `${SERVER_URL}/signIn`;
   try {
     const data = await axios.post(url, formdata);
     return data.data;
@@ -162,7 +162,7 @@ export async function logIn(formdata: formData) {
 }
 
 export async function signUp(formdata: formData) {
-  const url = `${import.meta.env.VITE_URL}/signUp`;
+  const url = `${SERVER_URL}/signUp`;
   try {
     const data = await axios.post(url, formdata);
     return data.data;

@@ -4,7 +4,7 @@ import { Plus, Tags, ThumbsUp, Edit, Trash2, Menu } from "lucide-react";
 
 
 const API_BASE_URL =
-  import.meta.env.VITE_URL_SERVER_URL;
+  import.meta.env.VITE_APP_URL_SERVER_URL;
 
 interface Author {
   _id: string;
