@@ -1,10 +1,11 @@
 import axios from "axios";
 import { formData } from "./types";
 import { Assessment, AssessmentListItem } from './types';
+import { SERVER_URL } from "./constant";
 const token = localStorage.getItem("token");
 
 export async function allEvents(limit?: number) {
-  const url = `${import.meta.env.VITE_URL_SERVER_URL}/allevents?limit=${limit}`;
+  const url = `${SERVER_URL}/allevents?limit=${limit}`;
   try {
     const data = await axios.get(url);
     return data.data;
@@ -36,7 +37,7 @@ export async function createEvent(eventData: any) {
   }
 }
 export async function editEvent(eventData: any, id: any) {
-  const url = `${import.meta.env.VITE_URL_SERVER_URL}/updateEvent/${id}`;
+  const url = `${SERVER_URL}/updateEvent/${id}`;
   try {
     const data = await axios.patch(url, eventData, {
       headers: {
